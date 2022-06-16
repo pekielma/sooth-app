@@ -1,12 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import Index from './views/homePage';
+import Navbar from './components/navbar/navbar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       
-      </header>
+    <Navbar />
+    <Index />
     </div>
   );
 }

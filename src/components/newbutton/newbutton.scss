@@ -1,4 +1,4 @@
-.new-button{
+.white{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,4 +7,18 @@
     color: #354E57;
     width: 50px;
     height: 30px;
+}
+.gray{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F7F7;
+    text-decoration: none;
+    color: #354E57;
+    width: 50px;
+    height: 30px;
+    position: relative;
+    z-index: 1;
+    left: 20px;
+    top: 20px;
 }

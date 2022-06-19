@@ -1,0 +1,43 @@
+.products-overview{
+    height: 120vh;
+    width: 100vw;
+    background-color: #EEF3F4;
+
+
+    .products-title{
+        color: #354E57;
+        
+        h2{
+            padding-bottom: 10px;
+            padding-top: 30px;
+        }
+        p{
+            padding-bottom: 40px;
+            padding-top: 10px;
+        }
+    }
+
+    .products-section{
+        margin-left: 150px;
+        margin-right: 100px;
+    
+
+        .links{
+            display: flex;
+            justify-content: space-between;
+            text-decoration: none;
+            padding-top: 100px;
+            padding-bottom: 40px;
+            
+
+            a{
+                text-decoration: none;
+                color: #2E2E22;
+            }
+        }
+        .cards{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

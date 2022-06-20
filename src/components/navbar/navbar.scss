@@ -1,0 +1,28 @@
+.navbar{
+    background-color: #EEF3F4;
+    display: flex;
+    flex-direction: column;
+
+    *{
+        padding: 10px;
+        color: #293D45;
+        
+    }
+
+    .up-nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .search-icon-a{
+        padding: 0;
+
+        .search-icon{
+            font-size: 1.2rem;
+            color: #293D45;
+            padding: 0;
+            position: relative;
+            top: 5px;
+        }
+    }
+   
+}

@@ -1,12 +1,57 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './productsOverview.scss'
 import Cards from '../../components/card/card'
 import AcneCreamImage from '../../images/Cream-2.png'
 import vitiligioImage from '../../images/vitiligi-background.png'
 import ezcemaImage from '../../images/ezcema-background.png'
 import suburnImage from '../../images/suburn-4.png'
+import axios from 'axios'
 
-function productsOverview() {
+function ProductsOverview() {
+  const [data, setData] = useState()
+
+const fetchProducts = async () => {
+  try{
+    let response = await axios.get('https://fakestoreapi.com/products');
+    window.localStorage.setItem('MY_DATA', JSON.stringify(response.data))
+
+    const produscts = window.localStorage.getItem('MY_DATA')
+  if(produscts) setData(JSON.parse(produscts))
+    console.log('products', data)
+   
+    
+    
+  }catch (error){
+    console.log(error)
+  }
+}
+
+// const produscts = window.localStorage.getItem('MY_DATA')
+//   if(produscts) setLocalData(JSON.parse(produscts))
+//   console.log('products', localData)
+
+
+useEffect(() => {
+  fetchProducts()
+  
+  
+  
+}, [data])
+
+
+// let i = 0;
+// const intervalId = setInterval(function () {
+//   if (i < 2) {
+//     console.log(i);
+//   } else {
+//     console.log('Pop!');
+//     clearInterval(intervalId);
+//   }
+ 
+//   i++;
+// }, 1000);
+
+
   return (
     <div className='products-overview'>
       <div className='products-title'>
@@ -32,4 +77,4 @@ function productsOverview() {
   )
 }
 
-export default productsOverview
+export default ProductsOverview

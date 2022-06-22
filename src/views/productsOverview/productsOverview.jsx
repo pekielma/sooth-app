@@ -12,44 +12,23 @@ function ProductsOverview() {
 
 const fetchProducts = async () => {
   try{
-    let response = await axios.get('https://fakestoreapi.com/products');
-    window.localStorage.setItem('MY_DATA', JSON.stringify(response.data))
-
-    const produscts = window.localStorage.getItem('MY_DATA')
-  if(produscts) setData(JSON.parse(produscts))
-    console.log('products', data)
+    const response = await axios.get('https://fakestoreapi.com/products');
+    setData(response.data)
+    console.log('products')
    
-    
-    
   }catch (error){
     console.log(error)
   }
 }
 
-// const produscts = window.localStorage.getItem('MY_DATA')
-//   if(produscts) setLocalData(JSON.parse(produscts))
-//   console.log('products', localData)
-
-
 useEffect(() => {
   fetchProducts()
   
-  
-  
-}, [data])
+}, [])
 
 
-// let i = 0;
-// const intervalId = setInterval(function () {
-//   if (i < 2) {
-//     console.log(i);
-//   } else {
-//     console.log('Pop!');
-//     clearInterval(intervalId);
-//   }
- 
-//   i++;
-// }, 1000);
+localStorage.setItem('PRODUCTS', JSON.stringify(data))
+const productsCart = window.localStorage.getItem('PRODUCTS')
 
 
   return (

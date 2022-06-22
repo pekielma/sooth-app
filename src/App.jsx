@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './App.css';
 import Index from './views/homePage';
-import Navbar from './components/navbar/Navbar.jsx';
+import Navbar from './components/navbar/navbar';
 import ProductsOverview from './views/productsOverview/productsOverview';
 import CartModal from './components/CartModal/CartModal'
 

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import Navlink from '../Navlink/Navlink'
-import './Navbar.scss'
+import Navlink from '../navlink/navlink'
+import './navbar.scss'
 import { AiOutlineSearch } from 'react-icons/ai'
 
 

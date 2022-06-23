@@ -1,12 +1,24 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './productsOverview.scss'
 import Cards from '../../components/card/card'
 import AcneCreamImage from '../../images/Cream-2.png'
 import vitiligioImage from '../../images/vitiligi-background.png'
 import ezcemaImage from '../../images/ezcema-background.png'
 import suburnImage from '../../images/suburn-4.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { getProducts } from '../../redux/data'
 
-function productsOverview() {
+
+function ProductsOverview(props) {
+  const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.products);
+
+  useEffect(()=>{
+    dispatch(getProducts())
+  }, [])
+  
+console.log('products', products)
+
   return (
     <div className='products-overview'>
       <div className='products-title'>
@@ -21,10 +33,20 @@ function productsOverview() {
           <a href="">Shop all products</a>
       </div>
       <div className='cards'>
-      <Cards img={AcneCreamImage} title='Acne Cream' price={24.99} />
+      {
+        products.map((product)=>{
+          if( product.category == "women's clothing" & product.price > 10 ){
+            return(
+              <Cards addToCart={props.addToCart} product={product} img={product.image} title={product.title} price={product.price} />
+            )
+         
+          } 
+        })
+      }
+      {/* <Cards img={AcneCreamImage} title='Acne Cream' price={24.99} />
       <Cards img={vitiligioImage} title='Acne Cream' price={24.99} />
       <Cards img={ezcemaImage} title='Acne Cream' price={24.99} />
-      <Cards img={suburnImage} discount={30} title='Acne Cream' price={24.99} />      
+      <Cards img={suburnImage} discount={70} title='Acne Cream' price={24.99} />       */}
       </div>
 
       </div>
@@ -32,4 +54,4 @@ function productsOverview() {
   )
 }
 
-export default productsOverview
+export default ProductsOverview

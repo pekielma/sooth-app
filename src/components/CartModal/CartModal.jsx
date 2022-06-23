@@ -31,6 +31,7 @@ function CarModal(props) {
 }
   ]
 
+  console.log('cart', props.cart)
     if (!props.open) return null
 
   return ReactDom.createPortal(
@@ -39,10 +40,11 @@ function CarModal(props) {
     <div className='MODAL_STYLES'> 
     <div className='cart-title'>
       <h2>Your Cart</h2>
+      <div onClick={props.openModal}><b>X</b></div>
     </div>
     <div className='cart-list-items'>
     {
-      cart.map((item) =>{
+      props.cart.map((item) =>{
         return (
           <div className='cart-item'>
             <img className='item-image' src={item.image} alt={item.title} />

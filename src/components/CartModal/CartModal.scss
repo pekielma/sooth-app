@@ -20,11 +20,20 @@
     z-index: 1000;
     color: #354E57;
 
+    .cart-title{
+        display: flex;
+        justify-content: space-between;
+
+        div{
+            font-size: 20px;
+        }
+    }
+
     .cart-list-items{
         display: flex;
         flex-direction: column;
 
-       
+      
         .cart-item{
             display: flex;
             justify-content: space-between;

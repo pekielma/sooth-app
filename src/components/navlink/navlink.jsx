@@ -1,15 +1,24 @@
 import React, { useState } from "react";
+import './navlink.scss'
 
 function Navlink(props) {
   const [isBold, setIsBold] = useState(props.bold);
+  const [passFunction, setPassFunction] = useState(props.passFunction);
 
   return isBold ? (
-    <a className='navlink' href={props.herf}>
+    passFunction ? (
+      <a onClick={props.openModal} className='navlink' href={props.herf}>
+     <b>{props.content}</b>
+    </a>
+    ) : (
+      <a className='navlink' href={props.herf}>
       <b>{props.content}</b>
     </a>
+    )
+   
   ) : (
-    <a className='navlink' href={props.herf}>
-      {props.content}
+      <a className='navlink' href={props.herf}>
+       {props.content}
     </a>
   );
 }

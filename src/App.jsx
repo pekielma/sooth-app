@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Index from "./views/homePage";
 import Navbar from "./components/navbar/navbar";
 import ProductsOverview from "./views/productsOverview/productsOverview";
 import CartModal from "./components/CartModal/CartModal";
+import Consultations from "./views/consultations/consultations";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +38,18 @@ function App() {
         setIsOpen={setIsOpen}
         open={isOpen}
       />
-      <Index />
+      <Routes> 
+
+      <Route path="/" element={
+        <>
+        <Index />
       <ProductsOverview addToCart={addToCart} />
+      </>
+      } 
+
+      />
+      <Route path="/consultations" element={<Consultations />} />
+      </Routes>
     </div>
   );
 }

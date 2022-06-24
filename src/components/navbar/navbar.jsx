@@ -12,8 +12,8 @@ function Navbar(props) {
     <nav className='navbar'>
     <div className='up-nav'>
     <div className='left-up'>
-    <Navlink bold={true} content='ABOUT'/>
-    <Navlink bold={true} content='CONSULTATIONS'/>
+    <Navlink bold={true} herf='/' content='ABOUT'/>
+    <Navlink bold={true} herf='/consultations' content='CONSULTATIONS'/>
 
     </div>
     <h1>sooth</h1>
@@ -31,7 +31,6 @@ function Navbar(props) {
     <Navlink bold={false} content='PSORIASIS'/>
     <Navlink bold={false} content='VITILIGIO'/>
     </div>
-
     </nav>
   )
 }

@@ -6,8 +6,6 @@ import Newbutton from '../newbutton/newbutton'
 
 function cards(props) {
   const discountStyle = (props.price * props.discount / 100).toFixed(2)
-  
-  
 
   return (
     <div className='card'>
@@ -23,7 +21,6 @@ function cards(props) {
     <span className='after-discount'>${discountStyle}</span><hr className='hr-discount'/><span className='before-discount'>${props.price}</span>
     </p>
     }
-    
 
     <Shopbutton addToCart={props.addToCart} product={props.product} content= 'Add to cart' bold={false} />
     </div>

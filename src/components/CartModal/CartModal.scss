@@ -1,58 +1,57 @@
-.overlay_styles{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.427);
-    z-index: 1000;
+.overlay_styles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.427);
+  z-index: 1000;
 }
-.MODAL_STYLES{
-    position: fixed;
-    
-    height: 100vh;
-    width: 33vw;
-    top: 50%;
-    left: 84%;
-    transform: translate(-50%, -50%);
-    padding: 40px;
-    background-color: #EEF2F4;
-    z-index: 1000;
-    color: #354E57;
+.MODAL_STYLES {
+  position: fixed;
 
-    .cart-title{
-        display: flex;
-        justify-content: space-between;
+  height: 100vh;
+  width: 33vw;
+  top: 50%;
+  left: 84%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background-color: #eef2f4;
+  z-index: 1000;
+  color: #354e57;
 
-        div{
-            font-size: 20px;
-        }
+  .cart-title {
+    display: flex;
+    justify-content: space-between;
+
+    .exit {
+      font-size: 20px;
     }
+  }
 
-    .cart-list-items{
+  .cart-list-items {
+    display: flex;
+    flex-direction: column;
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+
+      .item-image {
+        height: 106.21px;
+        width: 106.21px;
+        border: solid #bacad1 1px;
+        border-right: none;
+      }
+      .item-info {
         display: flex;
         flex-direction: column;
-
-      
-        .cart-item{
-            display: flex;
-            justify-content: space-between;
-
-            .item-image{
-                height: 106.21px;
-                width: 106.21px;
-                border: solid #BACAD1 1px;
-                border-right: none;
-            }
-            .item-info{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                background-color: white;
-                width: 100%;
-                border: solid #BACAD1 1px
-            }
-        }
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 100%;
+        border: solid #bacad1 1px;
+      }
     }
+  }
 }

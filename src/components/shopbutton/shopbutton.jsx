@@ -7,7 +7,7 @@ import { GrInstallOption } from 'react-icons/gr'
 <GrInstallOption />
 
 function Shopbuton(props) {
-  const [isBold, setIsBold] = useState(props.bold);
+  const [isBold] = useState(props.bold);
 
   return isBold ? (
     <a className='bold-button' href={props.herf}>

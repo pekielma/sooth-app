@@ -1,71 +1,41 @@
-import ReactDom from 'react-dom'
-import './CartModal.scss'
-import AcneCreamImage from '../../images/Cream-2.png'
+import ReactDom from "react-dom";
+import "./CartModal.scss";
 
 function CarModal(props) {
-
- let cart = [
-    {
-        id: 1,
-        title:'Acne Cream',
-        price:'...',
-        category:'...',
-        description:'All Natural Ingredients.',
-        image: AcneCreamImage
-    },
-    {
-      id:2,
-      title:'Acne Cream',
-      price:'...',
-      category:'...',
-      description:'All Natural Ingredients.',
-      image:AcneCreamImage
-  },
-  {
-    id:3,
-    title:'Acne Cream',
-    price:'24.99',
-    category:'...',
-    description:'All Natural Ingredients.',
-    image:AcneCreamImage
-}
-  ]
-
-  console.log('cart', props.cart)
-    if (!props.open) return null
+  if (!props.open) return null;
 
   return ReactDom.createPortal(
     <>
-    <div className='overlay_styles'>
-    <div className='MODAL_STYLES'> 
-    <div className='cart-title'>
-      <h2>Your Cart</h2>
-      <div onClick={props.openModal}><b>X</b></div>
-    </div>
-    <div className='cart-list-items'>
-    {
-      props.cart.map((item) =>{
-        return (
-          <div className='cart-item'>
-            <img className='item-image' src={item.image} alt={item.title} />
-            <div className='item-info'>
-            <p>{item.title}</p>
-            <p>{item.description}</p>
+      <div className="overlay_styles">
+        <div className="MODAL_STYLES">
+          <div className="cart-title">
+            <h2>Your Cart</h2>
+            <div className='exit' onClick={props.openModal}>
+              <b>X</b>
             </div>
           </div>
-        );
-      })
-    }
-    </div>
-
-
-
-    </div>
-    </div>
+          <div className="cart-list-items">
+            {props.cart.map((item, index) => {
+              return (
+                <div key={index} className="cart-item">
+                  <img
+                    className="item-image"
+                    src={item.image}
+                    alt={item.title}
+                  />
+                  <div className="item-info">
+                    <p>{item.title}</p>
+                    <p>{item.description}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </>,
-    document.getElementById('portal')
-  )
+    document.getElementById("portal")
+  );
 }
 
-export default CarModal
-
+export default CarModal;

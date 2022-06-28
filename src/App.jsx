@@ -6,11 +6,13 @@ import Navbar from "./components/navbar/navbar";
 import ProductsOverview from "./views/productsOverview/productsOverview";
 import CartModal from "./components/CartModal/CartModal";
 import Consultations from "./views/consultations/consultations";
+import Login from "./views/login/Login";
+import Signup from "./views/signup/Signup";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
   const [cart, setCart] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const openModal = () => {
     setIsOpen(!isOpen);
@@ -41,13 +43,14 @@ function App() {
       <Routes> 
 
       <Route path="/" element={
-        <>
-        <Index />
+      <>
+      <Index />
       <ProductsOverview addToCart={addToCart} />
       </>
       } 
-
       />
+      <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/consultations" element={<Consultations />} />
       </Routes>
     </div>

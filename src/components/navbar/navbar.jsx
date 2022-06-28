@@ -20,7 +20,7 @@ function Navbar(props) {
     <div className='rigth-up'>
     <a   className='search-icon-a'><AiOutlineSearch className='search-icon' /></a>
     <Navlink openModal={props.openModal} passFunction={true} bold={true} content='CART'/>
-    <Navlink bold={true} content='LOGIN'/>
+    <Navlink herf='login' bold={true} content='LOGIN'/>
     </div>
 
     </div>

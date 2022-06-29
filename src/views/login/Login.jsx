@@ -22,7 +22,6 @@ const Login = (props, { history }) => {
       try {
         const user = await signInWithEmailAndPassword(auth, email, password);
         localStorage.setItem("user", JSON.stringify(user));
-        console.log('app', email)
         navigate("/");
         props.setIsLoggedIn(true)
         

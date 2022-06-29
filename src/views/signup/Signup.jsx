@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-const SignUp = ({ history }) => {
+const SignUp = (props, { history }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [user, setUser] = useState();
@@ -22,7 +22,7 @@ const SignUp = ({ history }) => {
       localStorage.setItem("user", JSON.stringify(user));
       navigate("/");
       setUser(user)
-      console.log('user', user);
+      props.setIsLoggedIn(true)
       
 
       } catch (error) {

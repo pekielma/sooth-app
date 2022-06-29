@@ -7,12 +7,19 @@ import ProductsOverview from "./views/productsOverview/productsOverview";
 import CartModal from "./components/CartModal/CartModal";
 import Consultations from "./views/consultations/consultations";
 import Login from "./views/login/Login";
+import { auth } from "./base";
+
 import Signup from "./views/signup/Signup";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  
+  console.log('isLoggedIn', isLoggedIn)
+
+
 
   const openModal = () => {
     setIsOpen(!isOpen);
@@ -32,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar openModal={openModal} />
+      <Navbar isLoggedIn={isLoggedIn} openModal={openModal} />
       <CartModal
         openModal={openModal}
         removeFromCart={removeFromCart}
@@ -50,7 +57,7 @@ function App() {
       } 
       />
       <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn}/>} />
       <Route path="/consultations" element={<Consultations />} />
       </Routes>
     </div>

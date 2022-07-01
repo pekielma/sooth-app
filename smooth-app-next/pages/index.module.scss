@@ -1,0 +1,45 @@
+.homePage{
+    height: 100vh;
+    width: 100vw;
+    background-color: #EEF3F4;
+    display: flex;
+    background-image: url('../public//images/updated_Header-1-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    
+
+    .homeCardSection{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .homeCard{
+            padding-left: 100px;
+            color: #354E57;
+        
+            *{
+                margin: 10px;
+            }
+            .content{
+                text-align: left;
+                margin: 0px;
+                
+                h2{
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+    
+    .ezcemaImage{
+        position: relative;
+        top: 200px;
+        left: 60px;
+        width: 400px;
+        height: 400px;
+        
+    }
+    
+}

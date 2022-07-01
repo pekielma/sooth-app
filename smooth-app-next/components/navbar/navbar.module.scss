@@ -1,0 +1,33 @@
+.navbar{
+    background-color: #EEF3F4;
+    display: flex;
+    flex-direction: column;
+
+    *{
+        padding: 10px;
+        color: #293D45;
+        
+    }
+
+    .upNav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .searchIconLink{
+        padding: 0;
+
+        .searchIcon{
+            font-size: 1.2rem;
+            color: #293D45;
+            padding: 0;
+            position: relative;
+            top: 5px;
+        }
+    }
+    // .downNav{
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
+   
+}
